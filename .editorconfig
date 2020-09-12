@@ -1,0 +1,18 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+# สำหรับ .code-snippets ของ VSCode จะเป็น JSON with Comments หรือ .jsonc
+# แนะนำให้กำหนด indent_size = 4 และ indent_style = tab
+# [*.code-snippets]
+# indent_size = 4
+# indent_style = tab
