@@ -1,8 +1,8 @@
 # อ่านก่อนนะ
 
-หลายคนคงเจอปัญหา โดยเฉพาะมือใหม่ ที่ download code จากต้นฉบับมา แล้วปรากฏว่าเวลา compile sass เป็น css นั้น บางอย่างไม่เหมือนที่ต้นฉบับเต้าทำไว้ เช่น ทศนิยมต้นฉบับมี 6 ตำแหน่ง แต่เราทำจริงได้แค่ 5 ตำแหน่ง รวมถึงการ compile แล้วไม่รองรับ Browser รุ่นเก่า ที่ประชาชนคนไทยยังใช้อยู่ เช่น IE8, IE9 และ IOS 9.5 และ Android 4, Android 5 ยังไม่รวมถึงเวลา compile แล้วมันดันทำให้แค่ .css และ .css.map แต่มันไม่ได้ทำการ compile ให้กับ .min.css
+> หลายคนคงเจอปัญหา โดยเฉพาะมือใหม่ ที่ download code จากต้นฉบับมา แล้วปรากฏว่าเวลา compile sass เป็น css นั้น บางอย่างไม่เหมือนที่ต้นฉบับเต้าทำไว้ เช่น ทศนิยมต้นฉบับมี 6 ตำแหน่ง แต่เราทำจริงได้แค่ 5 ตำแหน่ง รวมถึงการ compile แล้วไม่รองรับ Browser รุ่นเก่า ที่ประชาชนคนไทยยังใช้อยู่ เช่น IE8, IE9 และ IOS 9.5 และ Android 4, Android 5 ยังไม่รวมถึงเวลา compile แล้วมันดันทำให้แค่ .css และ .css.map แต่มันไม่ได้ทำการ compile ให้กับ .min.css
 
-มาดูวิธีแก้ปัญหานี้กัน
+## มาดูวิธีแก้ปัญหานี้กัน
 
 1. forked ต้นบับจาก creativetimofficial/material-kit
 2. ลบไฟล์ที่เราไม่ได้ใช้แน่นอนออกไปเช่น bower.json
@@ -23,6 +23,8 @@
    - เพิ่ม task minify-scss
       - ลดขนาดไฟล์ ด้วยการใช้ Output แบบ compressed
       - เพิ่ม surffix คำว่า min ให้ไฟล์ที่ถูกลดขนาด
+   - แก้ไข task watch
+      - เพิ่ม minify-scss เข้าไปใน series เพราะเราอยากได้ .min.css ที่ต้องผ่านการ compile
 5. ติดตั้งด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js อยู่ แล้วใช้คำสั่ง
    
     ```language
@@ -41,8 +43,9 @@
     npm run open-app
     ```
 7. เมื่อ compile แล้ว ให้กด `ctrl+c` เพื่อจบการทำงานทั้งหมด
+8. เพิ่มไฟล์ .editorconfig จะได้เป็นมาตรฐานเวลาเขียน code ถ้าใครเห็นต่างหรือใช้ไม่เหมือนผมก็อย่าใช้ครับ
 
-
+----------
 
 # [Material Kit](https://demos.creative-tim.com/material-kit/index.html) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Kit%20is%20a%20Free%20Bootstrap%204%20UI%20Kit%20%E2%9D%A4%EF%B8%8F%0Ahttps%3A//demos.creative-tim.com/material-kit/index.html%20%23bootstrap%20%23material%20%23design%20%23uikit%20%23freebie%20%20via%20%40CreativeTim)
 
