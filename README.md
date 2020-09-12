@@ -1,3 +1,45 @@
+# การติดตั้ง วิธีการ compile .sass เป็น .css และ .css.map และเพิ่มการทำ min.css
+
+1. forked ต้นบับจาก creativetimofficial/material-kit
+2. ลบไฟล์ที่เราไม่ได้ใช้แน่นอนออกไปเช่น bower.json
+3. แก้ไข package.json 
+   - ลบบางอย่างที่ไม่ได้ใช้ออก เช่น 
+      - directories
+      - repository
+      - keyword
+      - ห้ามลบ author เพราะเป็น credit ผู้ทำ (ตามมารยาท)
+   - เพิ่ม devDependencies
+      - gulp-rename (ใช้ตอนทำ min.css)
+4. แก้ไข gulpfile.js
+   - เพิ่ม var rename = require('gulp-rename');
+   - แก้ไข task compile-scss ให้เหมือน Bootstrap และ  creative-tim เค้า compile
+      - จัดรูปแบบไฟล์ให้เหมือนต้นฉบับ ด้วยการใช้ Output แบบ expanded
+      - precision ทศนิยม 6 ตำแหน่ง
+      - autoprefix ให้รองรับ Browser รุ่นเก่า
+   - เพิ่ม task minify-scss
+      - ลดขนาดไฟล์ ด้วยการใช้ Output แบบ compressed
+      - เพิ่ม surffix คำว่า min ให้ไฟล์ที่ถูกลดขนาด
+5. ติดตั้งด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js อยู่ แล้วใช้คำสั่ง
+   
+    ```language
+    npm install
+    ```
+
+6. compile .sass เป็น .css , .min.css, .css.map ด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js อยู่ แล้วด้วยการพิมพ์คำสั่ง
+
+    ```language
+    gulp open-app
+    ```
+
+    หรือพิมพ์คำสั่ง
+
+    ```language
+    npm run open-app
+    ```
+7. เมื่อ compile แล้ว ให้กด `ctrl+c` เพื่อจบการทำงานทั้งหมด
+
+
+
 # [Material Kit](https://demos.creative-tim.com/material-kit/index.html) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Kit%20is%20a%20Free%20Bootstrap%204%20UI%20Kit%20%E2%9D%A4%EF%B8%8F%0Ahttps%3A//demos.creative-tim.com/material-kit/index.html%20%23bootstrap%20%23material%20%23design%20%23uikit%20%23freebie%20%20via%20%40CreativeTim)
 
 
