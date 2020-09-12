@@ -1,4 +1,4 @@
-# การติดตั้ง วิธีการ compile .sass เป็น .css และ .css.map และเพิ่มการทำ min.css
+# อ่านก่อนนะ
 
 1. forked ต้นบับจาก creativetimofficial/material-kit
 2. ลบไฟล์ที่เราไม่ได้ใช้แน่นอนออกไปเช่น bower.json
