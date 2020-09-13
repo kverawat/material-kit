@@ -90,7 +90,59 @@
 
 สำหรับคนที่สนับสนุนผู้ผลิตที่ได้สั่งซื้อแบบ PRO version แล้วติดปัญหา ให้ดูได้ที่นี่ครับ [Issue ทั้ง Open และ Closed แล้ว สำหรับ Material Kit PRO version](https://github.com/creativetimofficial/ct-material-kit-pro/issues)
 
-## สรุป
+## เปรีนบเทียบข้อแตกต่างระหว่างตัวฟรีกับตัวจ่ายตัง
+
+ในเอกสาร Document บอกว่าตัว PRO จะมีบางอย่างที่ตัวฟรีไม่มี จากการทดสอบดู พบว่าจริงครับ แต่ไม่จริงทั้งหมด เพราะบางอย่างที่บอกว่าต้องเป็น PRO ถึงจะใช้ได้ แต่เรากลับพบว่าแบบฟรีก็ใช้ได้เหมือนกัน เช่น Breadcrumb, Info Areas, Pagination, Parallax, Popovers, Video ที่บอกว่าเป็น PRO แต่เอาเข้าจริงฟรีก็ใช้ได้ ลองเอา code ไปวางดู ได้เฉยเลย แต่บางตัวบอกว่า PRO ก็ต้อง PRO เท่านั้นก็มีจริง ๆ เช่น Collapse, Tooltips, FileUpload Jasny, jQuery Tagsinput, Select Bootstrap
+
+### Components 
+
+| #  | Material Kit (2.0.7) | Material Kit PRO (2.2.0) |
+|-------------------|:---:|:----:|
+| Alert             |  ✔️  |  ✔️  |
+| Badge             |  ✔️  |  ✔️  |
+| Breadcrumb        |  ✔️  |  ✔️  |
+| Button            |  ✔️  |  ✔️  |
+| Card              |  ✔️  |  ✔️  |
+| Carouse           |  ✔️  |  ✔️  |
+| Collapse          |  -  |  ✔️  |
+| Dropdowns         |  ✔️  |  ✔️  |
+| Forms             |  ✔️  |  ✔️  |
+| Google Maps       |  ✔️  |  ✔️  |
+| Info Areas        |  ✔️  |  ✔️  |
+| Material Icons    |  ✔️  |  ✔️  |
+| Modal             |  ✔️  |  ✔️  |
+| Navs              |  ✔️  |  ✔️  |
+| Navbar            |  ✔️  |  ✔️  |
+| Pagination        |  ✔️  |  ✔️  |
+| Parallax          |  ✔️  |  ✔️  |
+| Popovers          |  ✔️  |  ✔️  |
+| Progress          |  ✔️  |  ✔️  |
+| Tables            |  ✔️  |  ✔️  |
+| Tooltips          |  -  |  ✔️  |
+| Typography        |  ✔️  |  ✔️  |
+| Video             |  ✔️  |  ✔️  |
+
+### Plugins
+
+| #  | Material Kit (2.0.7) | Material Kit PRO (2.2.0) |
+|-------------|:---:|:----:|
+| Bootstrap Switch           |  ✔️  |  ✔️  |
+| DateTimePicker             |  -  |  ✔️  |
+| FileUpload Jasny           |  -  |  ✔️  |
+| jQuery Tagsinput           |  -  |  ✔️  |
+| Select Bootstrap           |  -  |  ✔️  |
+| Sliders                    |  ✔️  |  ✔️  |
+
+### Features
+
+| #  | Material Kit (2.0.7) | Material Kit PRO (2.2.0) |
+|-------------|:---:|:----:|
+| Input Labels            |  ✔️  |  ✔️  |
+| Default Navbar          |  -  |  ✔️  |
+| Navbar Logo             |  ✔️  |  ✔️  |
+| Binding Cursor          |  ✔️  |  ✔️  |
+
+# สรุป
 1. ของเค้าดีจริง ทั้งตัวฟรี และตัว PRO ที่ต้องเสียตังซื้อ ผมให้คะแนน 9.9/10
 2. สวยงาม ได้มาตรฐาน ต่อยอดได้ง่าย รองรับ Browser เก่า ๆ ที่พี่ไทยยังใช้กันอยู่ด้วย
 3. Material Kit Pro ใน Version ที่ต้องเสียเงินซื้อมันคุ้มค่าแน่นอน เพราะผู้พัฒนา Bootstrap ได้ Verrify Code เค้าแล้วว่ามีคุณภาพจริง (Themes built by or reviewed by Bootstrap's creators.) ยกระดับให้เป็น Theme เพื่อให้ขาย Theme ในเว็บของ Bootstrap ได้เลย (best Bootstrap creators in the world.) ถ้าไม่เชื่อไปดูได้ที่ [Bootstrap Theme](https://themes.getbootstrap.com/)
