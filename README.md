@@ -57,8 +57,8 @@
 
 ### สิ่งที่ผมแก้ไขเพิ่มเติม
 
-1. ปัญหาของ link color หรือสี link ที่แก้ไขไม่ได้ ไม่น่าเชื่อว่าเกิดขึ้นจริง ผมแก้ปัญหานี้ให้แล้วตามนี้ครับ [$link-color could not be customized.](https://github.com/creativetimofficial/material-kit/issues/140)
-2. ปัญหาของ variable อื่น ๆ ที่แก้ไขแล้วไม่ได้ ดูที่นี่ครับ [Missing !default in variables](https://github.com/creativetimofficial/ct-material-kit-pro/issues/101)
+1. ปัญหาของ link color หรือสี link ที่แก้ไขไม่ได้ ไม่น่าเชื่อว่าเกิดขึ้นจริง ผมแก้ปัญหานี้ให้แล้วตามนี้ครับ [$link-color could not be customized.](https://github.com/creativetimofficial/material-kit/issues/140) คือ ให้เปิดไฟล์ assets\scss\material-kit\variables\_bootstrap-material-design.scss แล้วให้เพิ่ม !default ที่ $link-color (บรรทัดที่ 130) แค่นั้นเองจบ ทีนี้ถ้าเราอยากแก้ link color ให้เราไปแก้ในไฟล์ assets\scss\material-kit\bootstrap\scss\_variables.scss ที่ $link-color (บรรทัดที่ 150) เช่นผมจะลองเปลี่ยนจากเดิม $link-color: theme-color("primary") !default; เป็น $link-color: theme-color("warning") !default; ผลที่ได้คือ OK ครับ แก้สี link ได้แล้ว (ในไฟล์ที่ผม Forked มา ผมแก้แค่ `_bootstrap-material-design.scss` เท่านั้นนะครับ ส่วน `_variables.scss` ผมแค่ทดลองให้ดูเฉย ๆ ว่าทำแล้วได้ผลจริง
+2. ปัญหาของ variable อื่น ๆ ที่พยายามจะแก้ไขแล้วทำไมมันไม่ได้เปลี่ยนตามที่เราแก้ ดูที่นี่ครับ [Missing !default in variables](https://github.com/creativetimofficial/ct-material-kit-pro/issues/101) **บอกใบ้ให้นิดนึง คือต้องใส่ !default เข้าไปครับ ถึงจะแก้แล้วเห็นผล ต้นฉบับที่ผม Forhed มานั้น บางตัวก็ไม่ได้ใส่ !default ครับ**
 
 ### สิ่งที่ผมอยากจะบอก
 
