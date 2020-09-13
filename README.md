@@ -90,7 +90,9 @@
 
 สำหรับคนที่สนับสนุนผู้ผลิตที่ได้สั่งซื้อแบบ PRO version แล้วติดปัญหา ให้ดูได้ที่นี่ครับ [Issue ทั้ง Open และ Closed แล้ว สำหรับ Material Kit PRO version](https://github.com/creativetimofficial/ct-material-kit-pro/issues)
 
-## เปรีนบเทียบข้อแตกต่างระหว่างตัวฟรีกับตัวจ่ายตัง
+----------
+
+## เปรียบเทียบข้อแตกต่างระหว่างตัวฟรีกับตัวจ่ายตัง
 
 ในเอกสาร Document บอกว่าตัว PRO จะมีบางอย่างที่ตัวฟรีไม่มี จากการทดสอบดู พบว่าจริงครับ แต่ไม่จริงทั้งหมด เพราะบางอย่างที่บอกว่าต้องเป็น PRO ถึงจะใช้ได้ แต่เรากลับพบว่าแบบฟรีก็ใช้ได้เหมือนกัน เช่น Breadcrumb, Info Areas, Pagination, Parallax, Popovers, Video ที่บอกว่าเป็น PRO แต่เอาเข้าจริงฟรีก็ใช้ได้ ลองเอา code ไปวางดู ได้เฉยเลย แต่บางตัวบอกว่า PRO ก็ต้อง PRO เท่านั้นก็มีจริง ๆ เช่น Collapse, Tooltips, FileUpload Jasny, jQuery Tagsinput, Select Bootstrap
 
@@ -141,6 +143,10 @@
 | Default Navbar          |  -  |  ✔️  |
 | Navbar Logo             |  ✔️  |  ✔️  |
 | Binding Cursor          |  ✔️  |  ✔️  |
+
+
+----------
+
 
 # สรุป
 1. ของเค้าดีจริง ทั้งตัวฟรี และตัว PRO ที่ต้องเสียตังซื้อ ผมให้คะแนน 9.9/10
