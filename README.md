@@ -1,8 +1,8 @@
 # [Material Kit ในแบบของผม](https://github.com/kverawat/material-kit)
 
-## อ่านสิ่งที่ผมทำก่อนก็ดีนะ
+### อ่านสิ่งที่ผมทำก่อนก็ดีนะ
 
-> หลายคนคงเจอปัญหา โดยเฉพาะมือใหม่ ที่ download code [material-kit free version](https://github.com/creativetimofficial/material-kit) จากต้นฉบับจาก [creative-tim.com](https://creative-tim.com) แล้วปรากฏว่าเวลา compile sass เป็น css นั้น บางอย่างไม่เหมือนที่ต้นฉบับเค้าทำไว้ก่อนที่เราจะ compile เช่น ทศนิยมต้นฉบับมี 6 ตำแหน่ง แต่เราทำจริงได้แค่ 5 ตำแหน่ง รวมถึงการ compile แล้วไม่รองรับ Browser รุ่นเก่า ที่ประชาชนคนไทยยังใช้อยู่ เช่น IE8, IE9 และ IOS 9.5 และ Android 4, Android 5 (ว่าง ๆ ผมจะเอาสถิติเฉพาะประเทศไทยมาแบ่งปันกัน รู้แล้วจะหนาวครับ) ยังไม่รวมถึงเวลา compile แล้วมันดันทำให้แค่ 2 อย่างคือ .css และ .css.map แต่มันไม่ได้ทำการ compile ให้กับตัวไฟล์ .min.css ไม่เชื่อก่อน compile ลอง backup ต้นฉบับไว้เปรียบเทียบดู
+> หลายคนคงเจอปัญหาโดยเฉพาะมือใหม่ที่ download code [material-kit free version](https://github.com/creativetimofficial/material-kit) จากต้นฉบับจาก [creative-tim.com](https://creative-tim.com) แล้วปรากฏว่าเวลา compile sass เป็น css นั้น บางอย่างไม่เหมือนที่ต้นฉบับเค้าทำไว้ก่อนที่เราจะ compile เช่น ทศนิยมต้นฉบับมี 6 ตำแหน่ง แต่เราทำจริงได้แค่ 5 ตำแหน่ง รวมถึงการ compile แล้วไม่รองรับ Browser รุ่นเก่า ที่ประชาชนคนไทยยังใช้อยู่ เช่น IE8, IE9 และ IOS 9.5 และ Android 4, Android 5 (ว่าง ๆ ผมจะเอาสถิติเฉพาะประเทศไทยมาแบ่งปันกัน รู้แล้วจะหนาวครับ) ยังไม่รวมถึงเวลา compile แล้วมันดันทำให้แค่ 2 อย่างคือ `material-kit.css` และ `material-kit.css.map` แต่มันไม่ได้ทำการ compile ให้กับตัวไฟล์ `material-kit.min.css` ถ้าหากไม่เชื่อก่อน compile ลอง backup ต้นฉบับไว้เปรียบเทียบดูครับว่าทั้งหมดผมพูดจริง ดูจำนวนบรรทัดก็ได้ครับว่าเท่าเดิมเหมือนกับต้นฉบับไหมเวลาที่เราได้ compile มันเสร็จแล้ว
 
 ### มาดูว่าผมแก้ปัญหา compile sass นี้อย่างไร
 
@@ -27,7 +27,7 @@
       - เพิ่ม surffix คำว่า min ให้ไฟล์ที่ถูกลดขนาด
    - แก้ไข task watch
       - เพิ่ม minify-scss เข้าไปใน series เพราะเราอยากได้ .min.css ที่ต้องผ่านการ compile
-5. ติดตั้งด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js และ package.json อยู่ แล้วใช้คำสั่ง
+5. ผมใช้ Visual Studio Code ผมติดตั้งด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js และ package.json อยู่ แล้วใช้คำสั่ง
    
     ```language
     npm install
@@ -45,15 +45,32 @@
     npm run open-app
     ```
 
-7. สิงที่ได้คือ มันจะเปิดไฟล์ index.html ขึ้นมา อาจจะเปิดใน Chrome, Firefox, Edge ของผมเปิดใน Chrome (ที่มันเปิดเองอัโนมัติ เพราะเราได้เขียน code กำหนดให้มันเปิด ดูที่ไฟล์ gulpfile.js)
+7. สิ่งที่ได้คือ มันจะเปิดไฟล์ `index.html` ขึ้นมาให้เราชม อาจจะเปิดใน Chrome, Firefox, Edge ของผมเปิดใน Chrome (ที่มันเปิดเองอัตโนมัติ เพราะเราได้เขียน code กำหนดให้มันเปิด ดูที่ไฟล์ `gulpfile.js`)
 
-8. ขั้นตอนต่อไปนี้สำคัญมาก คือการแก้ไขไฟล์ scss หรือ sass เพื่อดูว่ามันจะ compile ให้เราได้จริงตามที่เราต้องการไหม เราจะทดลองแก้ไขสีหลักของเรา (primary color) มันอยู่ที่ `assets/scss/material-kit/variables/_brand.scss` ที่บรรทัด $primary: $purple-500 !default; ให้เราลองเปลี่ยจาก $purple-500 เป็น $yellow-500 ดู (จริง ๆ ผมแนะนำว่ลองใส่เป็นสีจริงที่เราจะค้นหาได้ง่าย ๆ ตอนอยากทดสอบ view code แล้ว ค้นหาโดยใส่ชื่อสี ว่ามันเปลี่ยนจริงไหม เช่น #123456 แบบนี้ (ไม่ต้องใส่ ; นะ) แสดงว่าตอนนี้สิ่งที่เราแก้ไปคือ $primary: #123456 !default; จากนั้นให้กด save ไฟล์
+8. ขั้นตอนต่อไปนี้สำคัญมาก คือการแก้ไขไฟล์ scss หรือ sass เพื่อดูว่ามันจะ compile ให้เราได้จริงตามที่เราต้องการไหม เราจะทดลองแก้ไขสีหลักของเรา (primary color) มันอยู่ที่ `assets/scss/material-kit/variables/_brand.scss` ที่บรรทัด `$primary: $purple-500 !default;` ให้เราลองเปลี่ยจาก `$purple-500` เป็น `$yellow-500` ดู (จริง ๆ ผมแนะนำว่าลองใส่เป็นสีจริงที่เราจะค้นหาได้ง่าย ๆ ตอนอยากทดสอบ view code แล้ว ค้นหาโดยใส่ชื่อสี ว่ามันเปลี่ยนจริงไหม เช่น `#123456` แบบนี้ สรุปก็คือแสดงว่าตอนนี้สิ่งที่เราแก้ไปคือ `$primary: #123456 !default;` จากนั้นให้กด save ไฟล์
 
-9. เมื่อกด save ในขั้นตอนก่อนหน้านี้ มันก็จะ complie ให้เราเสร็จเรียบร้อย กด F5 หรือ Refresh หน้าจอของ ไฟล์ index.html ใน Browser ของเราดูว่าสี primary ของเราเปลี่ยนเป็นสีที่เราเปลี่ยนจริง ๆ เมื่อมัน compile ให้เราเสร็จเราจะได้มาทั้ง material-kit.css, material-kit.css.map, material-kit.min.css อยู่ใน folder ชื่อ assets/css ลองแอบเข้าไปในไฟล์ทั้ง 3 นี้ แล้วค้นหา #123456 จะพบว่าค้นหาเจอจริง ๆ เพราะเรา compile เรียบร้อย (ถ้าใช้ไฟล์ gulpfile.js จากต้นฉบับ จะพบว่ามันจะไม่ compile ไฟล์ material-kit.min.css ให้เรา และจะเจอปัญหาเรื่องจำนวนทศนิยมที่มีแค่ 5 หลัก และจะเจอปัญหามันไม่เอา prefix บางอย่างที่จำเป็นต้องใช้ใน ฺBrowser รุ่นเก่ามาให้เรา เช่นพวก -moz- , -o-, -ms-, -webkit- มันจะไม่ทำให้เราตอน compile ด้วย code ต้นฉบับ ซึ่งผมคิดว่ามันจำเป็นถ้าเราจะให้รองรับ Web Browser เก่า ๆ ผมก็เลยจัดให้แล้วในสิ่งที่ผมแก้ gulpfile.js ในรูปแบบของผม
+9. เมื่อกด save ในขั้นตอนก่อนหน้านี้ มันก็จะ complie ให้เราเสร็จเรียบร้อย กด F5 หรือ Refresh หน้าจอของ ไฟล์ `index.html` ใน Browser ของเราดูว่าสี primary ของเราเปลี่ยนเป็นสีที่เราเปลี่ยนจริง ๆ เมื่อมัน compile ให้เราเสร็จเราจะได้มาทั้ง `material-kit.css`, `material-kit.css.map`, `material-kit.min.css` อยู่ใน folder ชื่อ `assets/css` ลองแอบเข้าไปในไฟล์ทั้ง 3 นี้ แล้วค้นหา `#123456` จะพบว่าค้นหาเจอจริง ๆ เพราะเรา compile เรียบร้อย (ถ้าใช้ไฟล์ `gulpfile.js` จากต้นฉบับ จะพบว่ามันจะไม่ compile ไฟล์ material-kit.min.css ให้เรา และจะเจอปัญหาเรื่องจำนวนทศนิยมที่มีแค่ 5 หลัก และจะเจอปัญหามันไม่เอา prefix บางอย่างที่จำเป็นต้องใช้ใน ฺBrowser รุ่นเก่ามาให้เรา เช่นพวก `-moz-`, `-o-`, `-ms-`, `-webkit`- มันจะไม่ทำให้เราตอน compile ด้วย code ต้นฉบับ ซึ่งผมคิดว่ามันจำเป็นถ้าเราจะให้รองรับ Web Browser เก่า ๆ ผมก็เลยจัดให้แล้วในสิ่งที่ผมแก้ gulpfile.js ในรูปแบบของผม
 
 10. เมื่อ compile แล้ว ได้ผลเป็นที่พอใจและขี้เกียจทำต่อ (จะเลิกทำแล้ว) ให้กด `ctrl+c` ใน terminal หรือใน cmd ของเรา เพื่อจบการทำงานทั้งหมด
 
-11. ผมเพิ่มไฟล์ .editorconfig จะได้เป็นมาตรฐานเวลาเขียน code ของตัวผมเอง ถ้าใครเห็นต่างหรือใช้ไม่เหมือนผมก็อย่าใช้ครับ มันมีผลใด ๆ ต่อการ compile scss มันเอาไว้เป็นมาตรฐาน code ตอนแสดงผลและเขียนเท่านั้น อยากรู้เพิ่มเติม ค้นหา editorconfig ใน google ดูครับ
+11. ผมเพิ่มไฟล์ `.editorconfig` จะได้เป็นมาตรฐานเวลาเขียน code ของตัวผมเอง ถ้าใครเห็นต่างหรือใช้ไม่เหมือนผมก็อย่าใช้ครับ มันไม่มีผลใด ๆ ต่อการ compile scss มันเอาไว้เป็นมาตรฐาน code ตอนแสดงผลและเขียนเท่านั้น อยากรู้เพิ่มเติม ค้นหา `editorconfig` ใน google ดูครับ
+
+### สิ่งที่ผมแก้ไขเพิ่มเติม
+
+1. ปัญหาของ link color หรือสี link ที่แก้ไขไม่ได้ ไม่น่าเชื่อว่าเกิดขึ้นจริง ผมแก้ปัญหานี้ให้แล้วตามนี้ครับ [$link-color could not be customized.](https://github.com/creativetimofficial/material-kit/issues/140)
+
+### สิ่งที่ผมอยากจะบอก
+
+1. เราจะยกเลิก Nav Bar Fix Top ได้ยังไง ดูได้ที่ [impossible to remove fixed-top](https://github.com/creativetimofficial/material-kit/issues/158)
+2. เราจะเปลี่ยน Sidebar ด้านข้างจากปกติด้านขวาให้อยู่ด้านซ้าย จะแก้ปัญหาดูได้ที่ [How to move Sidebar on Small screen from Right side to Left Side?](https://github.com/creativetimofficial/material-kit/issues/118) ข่าวดี ! ในเวอร์ชั่นล่าสุดที่เราใช้ตอนนี้นั้น ผู้พัฒนาได้เพิ่ม class นี้ให้เราเรียบร้อยแล้วครับ ดีใจด้วย เอาไปใช้ได้เลย
+3. เราจะไม่ใช้ gulp แต่จะใช้ webpack เพื่อ compile เพราะเป็นคนชอบของใหม่เบื่อของเก่า เบื่อวิธีเดิม ๆ ทั้ง ๆ ที่มันก็ยังใช้ได้ดี แต่ปัญหาคือทำไม่สำเร็จ จะแก้ปัญหาชอบของใหม่นี้ได้ยังไง ดูได้ที่ [Running material-kit with webpack 4](https://github.com/creativetimofficial/material-kit/issues/137)
+4. เราจะแก้ปัญหาหน้า login เวลาดูด้วยมือถือแล้วไม่สวย ไม่ได้เรื่อง ตำแหน่งบางอย่างผิดพลาด จะแก้ปัญหาได้ยังไง ดูได้ที่ [Login page doesn't work on some of the smaller screens](https://github.com/creativetimofficial/material-kit/issues/138)
+5. เราจะเพิ่ม Image Logo ที่ Nav Bar ได้ยังไง ดูได้ที่ [Add image logo to navbar](https://github.com/creativetimofficial/material-kit/issues/107)
+6. เราจะเปลี่ยนจาก click link ที่เมนู Navbar แล้วแสดง dropdown เป็นการ hover วางเมาส์เหนือ link ที่ Navbar แล้วแสดง dropdown ได้ยังไง ดูได้ที่ [clickable navbar with hover](https://github.com/creativetimofficial/material-kit/issues/98)
+
+ปัญหาอีกมากมายที่คุณเจออยู่หรืออาจเจอในอนาคต ไม่ต้องห่วงครับ เกือบทุกอย่างมีคำตอบให้คุณแล้ว ดูได้ที่ผู้จัดทำเลยครับ [Issue ทั้ง Open และ Closed แล้ว](https://github.com/creativetimofficial/material-kit/issues)
+
+สำหรับคนที่สนับสนุนผู้ผลิต ที่ได้สั่งซื้อแบบ PRO version ให้ดูได้ที่นี่ครับ [Issue ทั้ง Open และ Closed แล้ว สำหรับ Material Kit PRO version](https://github.com/creativetimofficial/ct-material-kit-pro/issues)
 
 ----------
 
