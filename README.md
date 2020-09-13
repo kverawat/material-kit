@@ -1,11 +1,13 @@
-# อ่านก่อนนะ
+# [Material Kit ในแบบของผม](https://github.com/kverawat/material-kit)
 
-> หลายคนคงเจอปัญหา โดยเฉพาะมือใหม่ ที่ download code จากต้นฉบับมาจาก creative-tim แล้วปรากฏว่าเวลา compile sass เป็น css นั้น บางอย่างไม่เหมือนที่ต้นฉบับเต้าทำไว้ เช่น ทศนิยมต้นฉบับมี 6 ตำแหน่ง แต่เราทำจริงได้แค่ 5 ตำแหน่ง รวมถึงการ compile แล้วไม่รองรับ Browser รุ่นเก่า ที่ประชาชนคนไทยยังใช้อยู่ เช่น IE8, IE9 และ IOS 9.5 และ Android 4, Android 5 ยังไม่รวมถึงเวลา compile แล้วมันดันทำให้แค่ .css และ .css.map แต่มันไม่ได้ทำการ compile ให้กับ .min.css
+## อ่านสิ่งที่ผมทำก่อนก็ดีนะ
 
-## มาดูวิธีแก้ปัญหานี้กัน
+> หลายคนคงเจอปัญหา โดยเฉพาะมือใหม่ ที่ download code [material-kit free version](https://github.com/creativetimofficial/material-kit) จากต้นฉบับจาก [creative-tim.com](https://creative-tim.com) แล้วปรากฏว่าเวลา compile sass เป็น css นั้น บางอย่างไม่เหมือนที่ต้นฉบับเค้าทำไว้ก่อนที่เราจะ compile เช่น ทศนิยมต้นฉบับมี 6 ตำแหน่ง แต่เราทำจริงได้แค่ 5 ตำแหน่ง รวมถึงการ compile แล้วไม่รองรับ Browser รุ่นเก่า ที่ประชาชนคนไทยยังใช้อยู่ เช่น IE8, IE9 และ IOS 9.5 และ Android 4, Android 5 (ว่าง ๆ ผมจะเอาสถิติเฉพาะประเทศไทยมาแบ่งปันกัน รู้แล้วจะหนาวครับ) ยังไม่รวมถึงเวลา compile แล้วมันดันทำให้แค่ 2 อย่างคือ .css และ .css.map แต่มันไม่ได้ทำการ compile ให้กับตัวไฟล์ .min.css ไม่เชื่อก่อน compile ลอง backup ต้นฉบับไว้เปรียบเทียบดู
 
-1. forked ต้นบับจาก creativetimofficial/material-kit
-2. ลบไฟล์ที่เราไม่ได้ใช้แน่นอนออกไปเช่น bower.json
+### มาดูว่าผมแก้ปัญหา compile sass นี้อย่างไร
+
+1. ก่อนอื่น ผม forked ต้นบับจาก creativetimofficial/material-kit
+2. ผมลบไฟล์ที่เราไม่ได้ใช้แน่นอนออกไปเช่น bower.json และ .github/workflows
 3. แก้ไข package.json 
    - ลบบางอย่างที่ไม่ได้ใช้ออก เช่น 
       - directories
@@ -13,7 +15,7 @@
       - keyword
       - ห้ามลบ author เพราะเป็น credit ผู้ทำ (ตามมารยาท)
    - เพิ่ม devDependencies
-      - gulp-rename (ใช้ตอนทำ min.css)
+      - gulp-rename (ผมจะใช้ตอนทำ min.css เพราะผมจะเพิ่ม suffix คำว่า min เข้าไป)
 4. แก้ไข gulpfile.js
    - เพิ่ม var rename = require('gulp-rename');
    - แก้ไข task compile-scss ให้เหมือน Bootstrap และ  creative-tim เค้า compile
@@ -25,13 +27,13 @@
       - เพิ่ม surffix คำว่า min ให้ไฟล์ที่ถูกลดขนาด
    - แก้ไข task watch
       - เพิ่ม minify-scss เข้าไปใน series เพราะเราอยากได้ .min.css ที่ต้องผ่านการ compile
-5. ติดตั้งด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js อยู่ แล้วใช้คำสั่ง
+5. ติดตั้งด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js และ package.json อยู่ แล้วใช้คำสั่ง
    
     ```language
     npm install
     ```
 
-6. compile .sass เป็น .css , .min.css, .css.map ด้วยการเปิด terminal หรือเปิด cmd ในตำแหน่งที่มีไฟล์ gulpfile.js อยู่ แล้วด้วยการพิมพ์คำสั่ง
+6. จากนั้นสั่ง Run gulp ของเรา ด้วยการพิมพ์คำสั่ง
 
     ```language
     gulp open-app
@@ -42,8 +44,16 @@
     ```language
     npm run open-app
     ```
-7. เมื่อ compile แล้ว ให้กด `ctrl+c` เพื่อจบการทำงานทั้งหมด
-8. เพิ่มไฟล์ .editorconfig จะได้เป็นมาตรฐานเวลาเขียน code ถ้าใครเห็นต่างหรือใช้ไม่เหมือนผมก็อย่าใช้ครับ
+
+7. สิงที่ได้คือ มันจะเปิดไฟล์ index.html ขึ้นมา อาจจะเปิดใน Chrome, Firefox, Edge ของผมเปิดใน Chrome (ที่มันเปิดเองอัโนมัติ เพราะเราได้เขียน code กำหนดให้มันเปิด ดูที่ไฟล์ gulpfile.js)
+
+8. ขั้นตอนต่อไปนี้สำคัญมาก คือการแก้ไขไฟล์ scss หรือ sass เพื่อดูว่ามันจะ compile ให้เราได้จริงตามที่เราต้องการไหม เราจะทดลองแก้ไขสีหลักของเรา (primary color) มันอยู่ที่ `assets/scss/material-kit/variables/_brand.scss` ที่บรรทัด $primary: $purple-500 !default; ให้เราลองเปลี่ยจาก $purple-500 เป็น $yellow-500 ดู (จริง ๆ ผมแนะนำว่ลองใส่เป็นสีจริงที่เราจะค้นหาได้ง่าย ๆ ตอนอยากทดสอบ view code แล้ว ค้นหาโดยใส่ชื่อสี ว่ามันเปลี่ยนจริงไหม เช่น #123456 แบบนี้ (ไม่ต้องใส่ ; นะ) แสดงว่าตอนนี้สิ่งที่เราแก้ไปคือ $primary: #123456 !default; จากนั้นให้กด save ไฟล์
+
+9. เมื่อกด save ในขั้นตอนก่อนหน้านี้ มันก็จะ complie ให้เราเสร็จเรียบร้อย กด F5 หรือ Refresh หน้าจอของ ไฟล์ index.html ใน Browser ของเราดูว่าสี primary ของเราเปลี่ยนเป็นสีที่เราเปลี่ยนจริง ๆ เมื่อมัน compile ให้เราเสร็จเราจะได้มาทั้ง material-kit.css, material-kit.css.map, material-kit.min.css อยู่ใน folder ชื่อ assets/css ลองแอบเข้าไปในไฟล์ทั้ง 3 นี้ แล้วค้นหา #123456 จะพบว่าค้นหาเจอจริง ๆ เพราะเรา compile เรียบร้อย (ถ้าใช้ไฟล์ gulpfile.js จากต้นฉบับ จะพบว่ามันจะไม่ compile ไฟล์ material-kit.min.css ให้เรา และจะเจอปัญหาเรื่องจำนวนทศนิยมที่มีแค่ 5 หลัก และจะเจอปัญหามันไม่เอา prefix บางอย่างที่จำเป็นต้องใช้ใน ฺBrowser รุ่นเก่ามาให้เรา เช่นพวก -moz- , -o-, -ms-, -webkit- มันจะไม่ทำให้เราตอน compile ด้วย code ต้นฉบับ ซึ่งผมคิดว่ามันจำเป็นถ้าเราจะให้รองรับ Web Browser เก่า ๆ ผมก็เลยจัดให้แล้วในสิ่งที่ผมแก้ gulpfile.js ในรูปแบบของผม
+
+10. เมื่อ compile แล้ว ได้ผลเป็นที่พอใจและขี้เกียจทำต่อ (จะเลิกทำแล้ว) ให้กด `ctrl+c` ใน terminal หรือใน cmd ของเรา เพื่อจบการทำงานทั้งหมด
+
+11. ผมเพิ่มไฟล์ .editorconfig จะได้เป็นมาตรฐานเวลาเขียน code ของตัวผมเอง ถ้าใครเห็นต่างหรือใช้ไม่เหมือนผมก็อย่าใช้ครับ มันมีผลใด ๆ ต่อการ compile scss มันเอาไว้เป็นมาตรฐาน code ตอนแสดงผลและเขียนเท่านั้น อยากรู้เพิ่มเติม ค้นหา editorconfig ใน google ดูครับ
 
 ----------
 
