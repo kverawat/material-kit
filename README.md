@@ -53,11 +53,12 @@
 
 10. เมื่อ compile แล้ว ได้ผลเป็นที่พอใจและขี้เกียจทำต่อ (จะเลิกทำแล้ว) ให้กด `ctrl+c` ใน terminal หรือใน cmd ของเรา เพื่อจบการทำงานทั้งหมด
 
-11. ผมเพิ่มไฟล์ `.editorconfig` จะได้เป็นมาตรฐานเวลาเขียน code ของตัวผมเอง ถ้าใครเห็นต่างหรือใช้ไม่เหมือนผมก็อย่าใช้ครับ มันไม่มีผลใด ๆ ต่อการ compile scss มันเอาไว้เป็นมาตรฐาน code ตอนแสดงผลและเขียนเท่านั้น อยากรู้เพิ่มเติม ค้นหา `editorconfig` ใน google ดูครับ
+11. ผมเพิ่มไฟล์ `.editorconfig` จะได้เป็นมาตรฐานเวลาเขียน code ของตัวผมเอง ถ้าใครเห็นต่างหรือใช้ไม่เหมือนผมก็อย่าใช้ครับ มันไม่มีผลใด ๆ ต่อการ compile scss มันเอาไว้เป็นมาตรฐาน code ตอนแสดงผลและเขียนเท่านั้น อยากรู้เพิ่มเติม ค้นหา `editorconfig` ใน google ดูครับ หรือไปที่ของจริงเลยที่ [editorconfig.org](https://editorconfig.org)
 
 ### สิ่งที่ผมแก้ไขเพิ่มเติม
 
 1. ปัญหาของ link color หรือสี link ที่แก้ไขไม่ได้ ไม่น่าเชื่อว่าเกิดขึ้นจริง ผมแก้ปัญหานี้ให้แล้วตามนี้ครับ [$link-color could not be customized.](https://github.com/creativetimofficial/material-kit/issues/140)
+2. ปัญหาของ variable อื่น ๆ ที่แก้ไขแล้วไม่ได้ ดูที่นี่ครับ [Missing !default in variables](https://github.com/creativetimofficial/ct-material-kit-pro/issues/101)
 
 ### สิ่งที่ผมอยากจะบอก
 
@@ -66,11 +67,37 @@
 3. เราจะไม่ใช้ gulp แต่จะใช้ webpack เพื่อ compile เพราะเป็นคนชอบของใหม่เบื่อของเก่า เบื่อวิธีเดิม ๆ ทั้ง ๆ ที่มันก็ยังใช้ได้ดี แต่ปัญหาคือทำไม่สำเร็จ จะแก้ปัญหาชอบของใหม่นี้ได้ยังไง ดูได้ที่ [Running material-kit with webpack 4](https://github.com/creativetimofficial/material-kit/issues/137)
 4. เราจะแก้ปัญหาหน้า login เวลาดูด้วยมือถือแล้วไม่สวย ไม่ได้เรื่อง ตำแหน่งบางอย่างผิดพลาด จะแก้ปัญหาได้ยังไง ดูได้ที่ [Login page doesn't work on some of the smaller screens](https://github.com/creativetimofficial/material-kit/issues/138)
 5. เราจะเพิ่ม Image Logo ที่ Nav Bar ได้ยังไง ดูได้ที่ [Add image logo to navbar](https://github.com/creativetimofficial/material-kit/issues/107)
-6. เราจะเปลี่ยนจาก click link ที่เมนู Navbar แล้วแสดง dropdown เป็นการ hover วางเมาส์เหนือ link ที่ Navbar แล้วแสดง dropdown ได้ยังไง ดูได้ที่ [clickable navbar with hover](https://github.com/creativetimofficial/material-kit/issues/98)
+6. เราจะเปลี่ยนจาก click link ที่เมนู Navbar แล้วแสดง dropdown เป็นการ hover วางเมาส์เหนือ link ที่ Navbar แล้วแสดง dropdown ได้ยังไง ดูได้ที่ [clickable navbar with hover](https://github.com/creativetimofficial/material-kit/issues/98) และตัวอย่างที่อยากให้ดูมากห้าพลาด ของจริง ทำได้จริง [bootstrap dropdown hover menu](https://codepen.io/bsngr/pen/frDqh) เยี่ยมมาก
+7. เราจะแก้ปัญหาแบบฟอร์มที่ต้องกรอกข้อความใน iphone เมื่อมันกดป้อนข้อมูลแล้วแต่มันดันแสดงขึ้นมาผิดตำแหน่งได้ยังไง **น่าสนใจมาก เจอปัญหานี้ทุกคนแน่** ดูได้ที่ [iPhone input binding cursor](https://github.com/creativetimofficial/ct-material-kit-pro/issues/112)
+8. เราจะแก้ปัญหาตัวอักษร h1 ใน Title ใต้ Navbar ที่มันใหญ่เกินไปเวลาที่แสดงในมือถือได้อย่างไร โดยเฉพาะใน ipad iphone เจอกันแน่ ดูได้ที่ [Header 1 looks strange in Safari on iPhone](https://github.com/creativetimofficial/ct-material-kit-pro/issues/111)
+9. เราจะซ่อน Mobile Menu ที่เราเปิดยังไงหลังจาก click link ที่อยู่ภายในเมนูที่เราเปิดขึ้นมานั้น มันคือปัญหาของคนทำ landing page หนือเว็บที่มีหน้าเดียวแต่อยากให้กด link ในเมนูแล้วกระโดไปตำแหน่ง anchor ในหน้านั้น แต่ Mobile Menu มันดันเปิดค้างไม่ยอมปิดให้ เราจะแก้ปัญหายังไง ดูได้ที่ [hide mobile menu after click on menu](https://github.com/creativetimofficial/ct-material-kit-pro/issues/155) และให้ลองดูที่ [dropdown-menu with anchors on mobile doesn't hide](https://github.com/creativetimofficial/material-kit/issues/60) ปกติปัญหานี้จะไม่เกิดกับคนที่ทำเว็บหลายหน้าเพราะ click link แล้วหน้ามันเปลี่ยน เลยไม่เจอปัญหานี้กัน
+10. เราจะกลับไปใช้ Navbar แบบเดิม ๆ เหมือน Bootstrap ยังไง เพราะเราไม่ชอบแบบที่อยู่ด้านข้าง อยากได้แบบทิ้งดิ่งลงมา ดูได้ที่ [Using the default behaviour for navbar on responsive](https://github.com/creativetimofficial/ct-material-kit-pro/issues/125) และถ้าประเภท One Page ที่ใช้ link แบบ anchor ถ้าอยากให้มัน Hide เมื่อ click link ด้านใน ให้ดูที่ [dropdown-menu with anchors on mobile doesn't hide](https://github.com/creativetimofficial/material-kit/issues/60)
+11. เราจะทำ Carousel แบบ fade ได้ยังไง ดูได้ที่ [carousel-fade](https://github.com/creativetimofficial/ct-material-kit-pro/issues/159)
+12. เราจะแก้ปัญหารูปภาพของเรามันล้นกรอบ หลุดออกจากกรอบของ card เพราะรูปเราอาจสูงเกินไปได้ยังไง ดูได้ที่ [Profile Card Example does not work correctly](https://github.com/creativetimofficial/ct-material-kit-pro/issues/167)
+13. เราจะแก้ปัญหาเรื่องความปลอดภัยยังไง มีคนบอกว่า Bootstrap แกนหลักของ Material Kit เป็น version ที่มีปัญหา Security จริงหรือเปล่า ดูได้ที่ [Includes front-end JavaScript Libraries with known security vulnerabilities](https://github.com/creativetimofficial/ct-material-kit-pro/issues/140) ผมสรุปให้เลยนะอันนี้ว่าไม่มีปัญหาแล้ว เพราะทั้ง Material Kit ตัวฟรี และ Material Kit PRO ตัวเสียตัง ใช้ jQuery version 3.2.1
+14. เราจะแก้ปัญหารูปภาพและข้อมูลที่อยู่ในส่วนของ main-raised พวกเนื้อหาหลักทั้งหมด คือตำแหน่งที่อยู่ใต้ page-header มันแสดงไม่ถูกต้องเหมือนหน้าตัวอย่างต้นฉบับได้ยังไง ดูได้ที่ [Wrong width on example page "product page"](https://github.com/creativetimofficial/ct-material-kit-pro/issues/133) **ปัญหานี้จะไม่เกิดถ้าเราไม่ใส่อะไรผิดธรรมชาติ หรือผิดโครงสร้างหลักของ code ต้นฉบับ แต่ปัญหานี้จะแก้ง่ายมากถ้าเรามีความรู้เรื่องการจัดการหน้าให้สวยงามด้วยพื้นฐาน css ที่ดีพอระดับหนึ่งครับ ดูตาม link ที่ให้ไปแล้วกัน**
+15. เราจะปรับความเร็วของ Carousel ได้ยังไง ดูได้ที่ [Carousel don't recognize the data-interval attribute](https://github.com/creativetimofficial/material-kit/issues/104)
+16. เราจะเอา filter ที่ทำให้รูปของเราสีไม่เหมือนรูปจริงที่เรามีออกไปได้ยังไง "รูปภาพตำแหน่งที่อยู่ใน page-header" ดูได้ที่ [https://github.com/creativetimofficial/material-kit/issues/83](https://github.com/creativetimofficial/material-kit/issues/83)
+17. เราจะทำให้เมนูของเราตอนที่อยู่ใน PC Desktop หรืออยู่ใน Tablet มีหน้าตาเหมือนตอนอยู่ใน Mobile ที่เป็น แฮมเบอร์เกอร์ ได้ยังไง ดูได้ที่ [Menu mobile on all media screens](https://github.com/creativetimofficial/material-kit/issues/78)
+18. เราจะแก้ปัญหา Select มีความสูงหรือจะเรียกว่าระยะแนวนอนที่ไม่ตรงแนวกับเพื่อน ๆ ของมันในแนวเดียวกันได้ยังไง มองตาเปล่าก็เห็นว่าเพี้ยน หน้าตามันเพี้ยนยังไง และจะแก้ปัญหานี้ยังไง ดูได้ที่ [Select Box height is not aligning](https://github.com/creativetimofficial/material-kit/issues/187) **ผมคิดว่าสำคัญ ควรแก้นะ ล่าสุดตัวฟรี ver 2.0.7 ที่ผม Forked มา ก็ยังไม่ได้แก้ ว่าง ๆ ผมจะแก้ตาม link ที่ผมให้ไว้ ถ้าผมแก้แล้วจะ update บอกอีกที**
+19 เราจะยกเลิกการแสดงวันที่ก่อนวันปัจจุบันใน datetimepicker ได้ยังไง ดูได้ที่ [Please give me a clear code to disable previous dates in datetimepicker in Material Kit](https://github.com/creativetimofficial/material-kit/issues/149) บางคนไม่ต้องการให้เลือกวันก่อนปัจจุบัน เช่น ระบบจองห้องพัก เป็นต้น แต่ถ้าพวกใช้ datetimepicker ทั่ว ๆ ไป ก็ไม่ต้องสนใจครับ
+20. เราจะแก้ปัญหา modal ปิดไม่ได้ได้ยังไง (บางคนอาจเจอปัญหานี้ บางคนอาตไม่เจอ) ดูได้ที่ [Cannot close modal](https://github.com/creativetimofficial/material-kit/issues/142)
+21. เราจะเปิดใช้งานปุ่มกดให้มี ripple effect หรือให้ card ต่าง ๆ มี ripple effect ได้ยังไง ดูได้ที่ [Cannot implement ripple effect other than buttons](https://github.com/creativetimofficial/material-kit/issues/141) **ล่าสุดตัวฟรี ver 2.0.7 ที่ผม Forked มา มันมีมาให้เลยนะ เราไม่ต้องทำอะไรทั้งนั้น**
+22. เราจะใช้ input label ใน form ยังไง ดูได้ที่ [Using input labels in a form](https://demos.creative-tim.com/material-kit/docs/2.1/getting-started/build-tools.html)
 
+### ปัญหาทุกอย่างแก้ไขได้
 ปัญหาอีกมากมายที่คุณเจออยู่หรืออาจเจอในอนาคต ไม่ต้องห่วงครับ เกือบทุกอย่างมีคำตอบให้คุณแล้ว ดูได้ที่ผู้จัดทำเลยครับ [Issue ทั้ง Open และ Closed แล้ว](https://github.com/creativetimofficial/material-kit/issues)
 
-สำหรับคนที่สนับสนุนผู้ผลิต ที่ได้สั่งซื้อแบบ PRO version ให้ดูได้ที่นี่ครับ [Issue ทั้ง Open และ Closed แล้ว สำหรับ Material Kit PRO version](https://github.com/creativetimofficial/ct-material-kit-pro/issues)
+สำหรับคนที่สนับสนุนผู้ผลิตที่ได้สั่งซื้อแบบ PRO version แล้วติดปัญหา ให้ดูได้ที่นี่ครับ [Issue ทั้ง Open และ Closed แล้ว สำหรับ Material Kit PRO version](https://github.com/creativetimofficial/ct-material-kit-pro/issues)
+
+## สรุป
+1. ของเค้าดีจริง ทั้งตัวฟรี และตัว PRO ที่ต้องเสียตังซื้อ ผมให้คะแนน 9.9/10
+2. สวยงาม ได้มาตรฐาน ต่อยอดได้ง่าย รองรับ Browser เก่า ๆ ที่พี่ไทยยังใช้กันอยู่ด้วย
+3. Material Kit Pro ใน Version ที่ต้องเสียเงินซื้อมันคุ้มค่าแน่นอน เพราะผู้พัฒนา Bootstrap ได้ Verrify Code เค้าแล้วว่ามีคุณภาพจริง (Themes built by or reviewed by Bootstrap's creators.) ยกระดับให้เป็น Theme เพื่อให้ขาย Theme ในเว็บของ Bootstrap ได้เลย (best Bootstrap creators in the world.) ถ้าไม่เชื่อไปดูได้ที่ [Bootstrap Theme](https://themes.getbootstrap.com/)
+4. ผมไม่มีส่วนได้เสียกับผู้พัฒนา Material Kit ผมไม่ได้ Commission ใด ๆ ในตอนนี้ แต่อนาคตไม่แน่เค้าอาจแบ่งตังให้ผมค่าเชียร์
+5. สำหรับ Material Kit ตัวฟรี ที่ผมนำเสนอตอนนี้ เป็น license แบบ MIT ครับ สามารถเอาไปใช้ได้ฟรี จะทำเว็บขายของ จะทำการกุศล จะเอาไปรับจ้างเขียนเว็บ จะเอา code ไปแก้ก็ได้ แต่ห้ามลบ Credit ที่เค้าเขียนใน code ของเค้าออกนะ ปกติจะอยู่ในส่วนบรรทัดบน ๆ ของไฟล์ที่เขาเขียนไว้ เช่นใน material-kit.css, material-kit.js และใน core ของเขา และห้ามเอา code ทั้งดุ้นที่เขาแจกฟรีไปขายต่อ
+6. สำหรับ Material Kit PRO ตัวเสียตัง มีหลายแบบหลายราคาครับ ถ้าสนใจ ดูได้ที่นี่ [material-kit-pro](https://www.creative-tim.com/product/material-kit-pro)
+
 
 ----------
 
