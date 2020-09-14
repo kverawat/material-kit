@@ -233,3 +233,17 @@ $mdb-checkbox-border-color: $mdb-label-color-toggle-focus !default;
 $mdb-radio-label-color: $mdb-label-color !default;
 $mdb-radio-color-off: $mdb-label-color-toggle-focus !default;
 $mdb-radio-color-on: $primary !default;
+
+// use specific variables for card header bacground and make card header variables defaults
+$card-header-primary-bg-from: $purple-400 !default;
+$card-header-primary-bg-to: $purple-700 !default;
+$card-header-info-bg-from: $cyan-400 !default;
+$card-header-info-bg-to: $cyan-700 !default;
+$card-header-success-bg-from: $green-400 !default;
+$card-header-success-bg-to: $green-700 !default;
+$card-header-warning-bg-from: $orange-400 !default;
+$card-header-warning-bg-to: $orange-700 !default;
+$card-header-danger-bg-from: $red-400 !default;
+$card-header-danger-bg-to: $red-700 !default;
+$card-header-rose-bg-from: $pink-400 !default;
+$card-header-rose-bg-to: $pink-700 !default;
