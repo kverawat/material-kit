@@ -168,7 +168,12 @@
 6. สำหรับ Material Kit PRO ตัวเสียตัง มีหลายแบบหลายราคาครับ ถ้าสนใจ ดูได้ที่นี่ [material-kit-pro](https://www.creative-tim.com/product/material-kit-pro)
 
 
+# ก่อนจากกัน (ถ้ามีเวลา)
+แนะนำให้ลองดู Material Kit Free Version ในแบบฉบับของท่าน Lumenion ผมว่าเขาก็แก้ไปเยอะ เขาตาม update พวก issue อยู่ประจำ และทำได้ดีนะครับ ลองดู [Lumrenion/material-kit](https://github.com/Lumrenion/material-kit)
+
 ----------
+
+# README ต้นฉบับของจริงด้านล่างนี้ครับ
 
 # [Material Kit](https://demos.creative-tim.com/material-kit/index.html) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=Material%20Kit%20is%20a%20Free%20Bootstrap%204%20UI%20Kit%20%E2%9D%A4%EF%B8%8F%0Ahttps%3A//demos.creative-tim.com/material-kit/index.html%20%23bootstrap%20%23material%20%23design%20%23uikit%20%23freebie%20%20via%20%40CreativeTim)
 
