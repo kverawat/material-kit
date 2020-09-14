@@ -169,7 +169,7 @@
 
 
 # ก่อนจากกัน (ถ้ามีเวลา)
-แนะนำให้ลองดู Material Kit Free Version ในแบบฉบับของท่าน Lumenion ผมว่าเขาก็แก้ไปเยอะ เขาตาม update พวก issue อยู่ประจำ และทำได้ดีนะครับ ลองดู [Lumrenion/material-kit](https://github.com/Lumrenion/material-kit)
+แนะนำให้ลองดู Material Kit Free Version ในแบบฉบับของท่าน Lumenion ผมว่าเขาก็แก้ไปเยอะ เขาตาม update พวก issue อยู่ประจำ และทำได้ดีนะครับ ลองดู [Github.com/Lumrenion/material-kit](https://github.com/Lumrenion/material-kit) **ผมว่าเค้าคือเก่งมาก** เค้า Update bootstrap to Version 4.4.1 ด้วย
 
 ----------
 
