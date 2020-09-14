@@ -138,13 +138,13 @@ $popover-color: $navbar-color !default;
 $tooltip-font-size: 0.75rem !default;
 
 // Background colors
-$bg-primary: $primary;
-$bg-danger: $danger;
-$bg-warning: $warning;
-$bg-info: $info;
-$bg-rose: $rose;
-$bg-success: $success;
-$bg-dark: $grey-900;
+$bg-primary: $primary !default;
+$bg-danger: $danger !default;
+$bg-warning: $warning !default;
+$bg-info: $info !default;
+$bg-rose: $rose !default;
+$bg-success: $success !default;
+$bg-dark: $grey-900 !default;
 
 //Paddings
 $padding-general-y: 0.625rem !default;
