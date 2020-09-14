@@ -21,19 +21,18 @@
    - แก้ไข task compile-scss ให้เหมือน Bootstrap และ  creative-tim เค้า compile
       - จัดรูปแบบไฟล์ให้เหมือนต้นฉบับ ด้วยการใช้ Output แบบ expanded
         - ต้นฉบับเค้าใช้ `.pipe(sass()` ซึ่งจะให้ค่า default คือ outputStyle แบบ nested
-        - แต่ผมใช้ `.pipe(sass({ outputStyle: 'expanded' })` เพราะผมอยากได้แบบดู .css ง่าย ๆ ได้มาตรฐาน
+        - แต่ผมใช้ `.pipe(sass({ outputStyle: 'expanded' })` เพราะผมอยากได้แบบดู .css ง่าย ๆ ได้มาตรฐาน มีวงเล็บปีกกาขึ้นบรรทัดใหม่แบบทั่วไปที่เข้าใช้กัน มันง่ายเวลา Dev แต่ตอน Production จริงผมค่อยเปลี่ยนไปใช้ .min.css แทน
         - ข้อมูลเพิ่มเติมเรื่อง outputStyle ของ sass ที่มีด้วยกัน 4 รูปแบบหลัก คือ `nested`, `expanded`, `compact`, `compressed` ดูได้ที่ [Sass Output Style](https://www.quackit.com/sass/tutorial/sass_output_style.cfm)
       - precision ทศนิยม 6 ตำแหน่ง
         - ต้นฉบับเค้าใช้ `.pipe(sass()` ซึ่งจะให้ค่า default คือทศนิยม 5 ตำแหน่ง
         - แต่ผมใช้ `.pipe(sass({ precision: 6 })` เพราะผมอยากได้ทศนิยม 6 ตำแหน่ง
-    }).on('error', sass.logError))
       - autoprefix ให้รองรับ Browser รุ่นเก่า
         - เจ้าของต้นฉบับ creative-tim ปล่อย `autoprefixer()` ค่าว่าง
         - แต่เค้าแนะนำให้ใช้ `autoprefixer({browsers: ['last 2 versions']})` 
         - แต่ตัวผมเองจัดเต็มเพราะประเทศไทยไม่เหมือนที่อื่น เราใช้ Windows เถื่อนกันมาก ทำให้บางคนยังใช้ Browser รุ่นเก่า เพราะของเถื่อน update ไม่ได้ หรือบางคน update ไม่เป็น ทำให้ต้องหาวิธี Support IE รุ่นเก่า
       - autoprefix ให้ code ที่รองรับ Browser รุ่นเก่า แสดงผลออกมาแบบสวยงาม
         - เจ้าของต้นฉบับ creative-tim ปล่อย `autoprefixer()` ค่าว่าง
-        - และตัวผมเองทำตามเค้า แต่ถ้าใครอยากให้มันมันเรียงตัวสวยงามก็สามารถเพิ่ม `autoprefixer({ cascade: true })` ให้กับมันได้ ดูตัวอย่างได้ที่ [cascade option in gulp-autoprefixer]https://stackoverflow.com/questions/53395252/cascade-option-in-gulp-autoprefixer) มันจะจัดวางตำแหน่งหลัง compile พวก `-moz-`, `-o-`, `-ms-`, `-webkit`- ให้มันจะเรียงตัวในแต่ละบรรทัดได้สวยงาม แต่ผู้พัฒนา Bootstrap และต้นฉบับ creative-tim เขาก็ไม่ได้ใช้วิธีนี้นะ เค้าปล่อยเรียงเส้นตรงปกติ ผมแค่บอกให้รู้ไว้เผื่อใครจะใช้ แต่ผมก็ไม่ได้ใช้ ถ้าจะใช้แนะนำว่าใช้เฉพาะ .css อย่าใช้กับ .min.css นะครับ สามารถไปแก้ที่ไฟล์ `gulpfile.js`
+        - และตัวผมเองทำตามเค้า แต่ถ้าใครอยากให้มันมันเรียงตัวสวยงามก็สามารถเพิ่ม `autoprefixer({ cascade: true })` ให้กับมันได้ ดูตัวอย่างได้ที่ [cascade option in gulp-autoprefixer](https://stackoverflow.com/questions/53395252/cascade-option-in-gulp-autoprefixer) มันจะจัดวางตำแหน่งหลัง compile พวก `-moz-`, `-o-`, `-ms-`, `-webkit`- ให้มันจะเรียงตัวในแต่ละบรรทัดได้สวยงาม แต่ผู้พัฒนา Bootstrap และต้นฉบับ creative-tim เขาก็ไม่ได้ใช้วิธีนี้นะ เค้าปล่อยเรียงเส้นตรงปกติ ผมแค่บอกให้รู้ไว้เผื่อใครจะใช้ แต่ผมก็ไม่ได้ใช้ ถ้าจะใช้แนะนำว่าใช้เฉพาะ `.css` อย่าใช้กับ `.min.css` นะครับ สามารถไปแก้ที่ไฟล์ `gulpfile.js`
    - เพิ่ม task minify-scss
       - ลดขนาดไฟล์ ด้วยการใช้ Output แบบ compressed
       - เพิ่ม surffix คำว่า min ให้ไฟล์ที่ถูกลดขนาด
